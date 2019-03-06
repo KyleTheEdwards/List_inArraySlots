@@ -6,7 +6,7 @@
 public class List_inArraySlots {
 
     // declare fields here
-    public static int MAX_SIZE = 128;
+    public int MAX_SIZE = 10;
     private int[] data;
     private int topOfArray = 0;
     private int arraySize;
@@ -48,32 +48,41 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
+
        if(topOfArray >= MAX_SIZE){
-
-         return false;
-         
-       } else {
-
-         data[topOfArray] = value;
-         topOfArray++;
-         arraySize++;
-
-         return true;
+         expand();
        }
+
+       data[topOfArray] = value;
+       topOfArray++;
+       arraySize++;
+
+       return true;
      }
 
 
     /**
       Double the capacity of the List_inArraySlots,
       preserving existing data
-     */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
+     */              // Working methods should be silent. But during
+
+     private void expand() {
+        System.out.println( "expand... (for debugging)");
            // /* S.O.P. rules for debugging:
               // Working methods should be silent. But during
               // development, the programmer must verify that
               // this method is called when that is appropriate.
               // So test using the println(), then comment it out.
               // */
-     // }
+
+        MAX_SIZE *= 2;
+        int[] newData = new int[MAX_SIZE];
+
+        for(int x = 0; x < arraySize; x++){
+          newData[x] = data[x];
+        }
+
+        data = newData;
+
+     }
 }
