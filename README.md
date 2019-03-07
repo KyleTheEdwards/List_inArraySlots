@@ -4,21 +4,26 @@ Project title(working): List-o-gram
 
 Names of partners: Kyle Edwards, Ian Fried
 
-possible fields:
+#Fields:
 
-current_index, an int.
-size, an int.
-up, a boolean.
+public int MAX_SIZE
 
-possible methods:
+private int[] data;
 
-create_list(size), self-explanatory, nonstatic. Can be changed to proper constructor if needed. 
+private int topOfArray
 
-get_size(list), self-explanatory, nonstatic.
+private int arraySize
 
-move(up, index), move an element either up or down a list based on the state of 'up', static.
+#Methods:
 
-extract(index, index), return a list within the list 'this' which is contained within the given indices, static.
+public List_inArraySlots()
+	(two versions)
 
-More members to follow.
+public int size()
+
+public String toString()
+
+public boolean add( int value)
+
+private void expand()
 
