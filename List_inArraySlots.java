@@ -6,7 +6,7 @@
 public class List_inArraySlots {
 
     // declare fields here
-    public int MAX_SIZE = 10;
+    public int MAX_SIZE = 10;//mostly chosen for demonstration purposes
     private int[] data;
     private int topOfArray = 0;
     private int arraySize;
@@ -19,6 +19,15 @@ public class List_inArraySlots {
       arraySize = 0;
     }
 
+    //take input intArray and clone contents into our version of a list
+    public List_inArraySlots(int[] input) {
+      int length = input.length;
+      data = new int[length];
+      for(int i = 0; i < length; i++){
+        data[i] = input[i];
+      }
+      arraySize = length;
+    }
 
     /**
       @return the number of elements in this list
